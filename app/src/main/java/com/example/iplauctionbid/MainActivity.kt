@@ -6,7 +6,10 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Adapter
+import android.widget.AdapterView
 import android.widget.BaseAdapter
+import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.players_list.view.*
 
@@ -18,8 +21,14 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        listView.adapter = playerAdapter(this , playersList)
-
+        val adapter = playerAdapter(this , playersList)
+        listView.adapter = adapter
+        listView.setOnItemClickListener { parent, view, position, id ->
+            val playerName = view.playerName.text
+            val teamName = view.teamName.text
+            val playerPrice = view.playerPrice.text
+            Toast.makeText(this , "$playerName was bid by $teamName for $playerPrice", Toast.LENGTH_SHORT).show()
+        }
     }
 
     class playerAdapter(var context: Context, var playersList: ArrayList<PlayersList>) : BaseAdapter() {

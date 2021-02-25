@@ -125,3 +125,11 @@ This app prints the list of `IPL Players` and the `Teams` that have bid for them
 
 #### 3. Player Bid Amount
 The amount bid by the teams for any player is randomly chosen and is in the range `[2 , 16]`
+
+### Screenshots of the App
+<table>
+  <tr>
+    <td> <img src="screenshots/app_1.jpg" height="380" width="210"> </td>
+    <td> <img src="screenshots/app_2.jpg" height="380" width="210"> </td>
+  </tr>
+</table>
